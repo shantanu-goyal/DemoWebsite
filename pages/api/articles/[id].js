@@ -1,5 +1,4 @@
 import { articles } from '../../../data'
-import { withSentry } from '@sentry/nextjs';
 
 const handler = ({ query: { id } }, res) => {
   const filtered = articles.filter((article) => article.id === id)
@@ -14,4 +13,4 @@ const handler = ({ query: { id } }, res) => {
 }
 
 
-export default withSentry(handler);
+export default handler;
