@@ -4,6 +4,11 @@ import ArticleList from '../components/ArticleList'
 export default function Home({ articles }) {
   return (
     <div>
+      <button type="button" onClick={() => {
+        throw new Error("Sentry working??");
+      }}>
+        Throw error
+      </button>
       <ArticleList articles={articles} />
     </div>
   )

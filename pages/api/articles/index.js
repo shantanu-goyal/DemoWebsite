@@ -1,5 +1,11 @@
 import { articles } from '../../../data'
+import { withSentry } from '@sentry/nextjs';
 
-export default function handler(req, res) {
+
+
+const handler = (req, res) => {
   res.status(200).json(articles)
 }
+
+export default withSentry(handler);
+

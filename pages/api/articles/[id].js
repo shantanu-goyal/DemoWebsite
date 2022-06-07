@@ -1,6 +1,7 @@
 import { articles } from '../../../data'
+import { withSentry } from '@sentry/nextjs';
 
-export default function handler({ query: { id } }, res) {
+const handler = ({ query: { id } }, res) => {
   const filtered = articles.filter((article) => article.id === id)
 
   if (filtered.length > 0) {
@@ -11,3 +12,6 @@ export default function handler({ query: { id } }, res) {
       .json({ message: `Article with the id of ${id} is not found` })
   }
 }
+
+
+export default withSentry(handler);
