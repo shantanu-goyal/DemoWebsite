@@ -1,5 +1,6 @@
-import { server } from '../config'
 import ArticleList from '../components/ArticleList'
+import { server } from '../config';
+
 
 export default function Home({ articles }) {
   return (
@@ -15,7 +16,7 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/articles`, { headers: { 'Content-Type': 'application/json' } });
+  const res = await fetch(`${server}/api/articles`, { headers: { 'Content-Type': 'application/json' } });
   const articles = await res.json()
 
   return {
