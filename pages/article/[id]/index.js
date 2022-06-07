@@ -18,12 +18,16 @@ const article = ({ article }) => {
 
 export const getStaticProps = async (context) => {
   const res = await fetch(`${server}/api/articles/${context.params.id}`, {
+    method: "GET",
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'User-Agent': '*'
+      'User-Agent': '*',
+      Accept: 'application/json; charset=utf-8',
     }
   });
+
+  if (res.status !== 200)
+    throw String(`Invalid server response: ${res.status} ${res.statusText}`);
 
   const article = await res.json();
 
@@ -36,12 +40,16 @@ export const getStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
   const res = await fetch(`${server}/api/articles`, {
+    method: "GET",
     headers: {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'User-Agent': '*'
+      'User-Agent': '*',
+      Accept: 'application/json; charset=utf-8',
     }
   });
+
+  if (res.status !== 200)
+    throw String(`Invalid server response: ${res.status} ${res.statusText}`);
 
   const articles = await res.json();
 
