@@ -1,1 +1,1 @@
-export const server = 'https://' + process.env.NEXT_PUBLIC_VERCEL_URL
+export const server = process.env.NEXT_PUBLIC_VERCEL_URL
