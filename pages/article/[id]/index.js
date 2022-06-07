@@ -15,7 +15,7 @@ const article = ({ article }) => {
 };
 
 export const getStaticProps = async (context) => {
-  const res = await fetch(`${server}/api/articles/${context.params.id}`, { headers: { 'Content-Type': 'application/json' } });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/articles/${context.params.id}`, { headers: { 'Content-Type': 'application/json' } });
 
   const article = await res.json();
 
@@ -27,7 +27,7 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/api/articles`, { headers: { 'Content-Type': 'application/json' } });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/articles`, { headers: { 'Content-Type': 'application/json' } });
 
   const articles = await res.json();
 
