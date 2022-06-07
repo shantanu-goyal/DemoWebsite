@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.6.1",
     "@sentry/nextjs": "^7.0.0",
     "next": "^12.1.6",
     "react": "^18.1.0",

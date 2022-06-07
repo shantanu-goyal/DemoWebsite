@@ -7,8 +7,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Script
         id="walkme"
-        strategy="lazyOnload"
-        type="text/javascript"
+        strategy="worker"
         dangerouslySetInnerHTML={{
           __html: `(function() { 
           var walkme = document.createElement('script'); 
