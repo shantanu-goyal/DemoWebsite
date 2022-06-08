@@ -1,1 +1,1 @@
-export const server = process.env.URL
+export const server = "http://localhost:3000"
