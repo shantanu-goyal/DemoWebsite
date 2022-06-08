@@ -16,15 +16,8 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${server}/api/articles`, {
-    method: "GET",
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': '*',
-      Accept: 'application/json; charset=utf-8',
-    }
-  });
-
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+  
   if (res.status !== 200) {
     throw String(`Invalid server response: ${res.status} ${res.statusText}`);
   }
