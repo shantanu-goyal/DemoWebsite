@@ -1,4 +1,3 @@
-import { server } from "../../../config";
 import Link from "next/link";
 import Meta from "../../../components/Meta";
 
@@ -17,14 +16,7 @@ const article = ({ article }) => {
 };
 
 export const getStaticProps = async (context) => {
-  const res = await fetch(`${server}/api/articles/${context.params.id}`, {
-    method: "GET",
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': '*',
-      Accept: 'application/json; charset=utf-8',
-    }
-  });
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
 
   if (res.status !== 200)
     throw String(`Invalid server response: ${res.status} ${res.statusText}`);
@@ -39,14 +31,7 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`${server}/api/articles`, {
-    method: "GET",
-    headers: {
-      'Content-Type': 'application/json',
-      'User-Agent': '*',
-      Accept: 'application/json; charset=utf-8',
-    }
-  });
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
 
   if (res.status !== 200)
     throw String(`Invalid server response: ${res.status} ${res.statusText}`);
