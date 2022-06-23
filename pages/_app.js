@@ -60,6 +60,13 @@ function MyApp({ Component, pageProps }) {
           }}();
         `
         }} />
+        <Script id="google-ads" src="https://www.googletagmanager.com/gtag/js?id=UA-232776594-1" />
+        <Script dangerouslySetInnerHTML={{
+          __html:`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-232776594-1');`
+        }} />
       <Component {...pageProps} />
     </Layout>
   )
