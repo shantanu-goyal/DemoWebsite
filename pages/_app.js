@@ -44,31 +44,31 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Script id="beamer" type='text/javascript' src="https://app.getbeamer.com/js/beamer-embed.js" />
-       <Script id="beamer-config" dangerouslySetInnerHTML={
+      <Script id="beamer-config" dangerouslySetInnerHTML={
         {
-          __html:`var beamer_config = {
+          __html: `var beamer_config = {
             product_id : 'uJgeHXDh45550'
           };`
         }
-       } />
-       <Script id="segment-app" type='text/javascript'
+      } />
+      <Script id="segment-app" type='text/javascript'
         dangerouslySetInnerHTML={{
-          __html:`
+          __html: `
           !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="bRXNRn318aULtnU6nP0XiGOmwp1c5HoP";;analytics.SNIPPET_VERSION="4.15.3";
           analytics.load("bRXNRn318aULtnU6nP0XiGOmwp1c5HoP");
           analytics.page();
           }}();
         `
         }} />
-        <Script id="google-ads" src="https://www.googletagmanager.com/gtag/js?id=UA-232776594-1" />
-        <Script id="google-ads-2" dangerouslySetInnerHTML={{
-          __html:`window.dataLayer = window.dataLayer || [];
+      <Script id="google-ads" src="https://www.googletagmanager.com/gtag/js?id=UA-232776594-1" />
+      <Script id="google-ads-2" dangerouslySetInnerHTML={{
+        __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'UA-232776594-1');`
-        }} />
-        <Script id="hotjar" dangerouslySetInnerHTML={{
-          __html:`(function(h,o,t,j,a,r){
+      }} />
+      <Script id="hotjar" dangerouslySetInnerHTML={{
+        __html: `(function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:3034966,hjsv:6};
             a=o.getElementsByTagName('head')[0];
@@ -76,8 +76,17 @@ function MyApp({ Component, pageProps }) {
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`
-        }}>
-        </Script>
+      }}>
+      </Script>
+      <Script id="hotjar2" dangerouslySetInnerHTML={{
+        __html: `
+        var userId = 943568 || null;
+        window.hj('identify', userId, {
+        'Signed up': '2019—06-20Z',
+        'Total purchases': 15,
+        'Last purchase date': '2019-06-20Z'
+        });`
+      }} />
       <Component {...pageProps} />
     </Layout>
   )
