@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         priority="true"
         onLoad={loadHandler}
       />
-      {available && (<Script id="sentry-init"
+      <Script id="sentry-init"
         strategy={'worker'}
         dangerouslySetInnerHTML={{
           __html: `Sentry.init({
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 		        tracesSampleRate: 1.0
           });`,
         }}>
-      </Script>)}
+      </Script>
       <Script
         id="walkme"
         strategy={'worker'}
@@ -93,15 +93,6 @@ function MyApp({ Component, pageProps }) {
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`
       }}>
       </Script>
-      <Script strategy={'worker'} id="hotjar2" dangerouslySetInnerHTML={{
-        __html: `
-        var userId = 943568 || null;
-        window.hj('identify', userId, {
-        'Signed up': '2019—06-20Z',
-        'Total purchases': 15,
-        'Last purchase date': '2019-06-20Z'
-        });`
-      }} />
       <Script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous" />
       <Script strategy={'lazyOnload'} src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.esm.min.js" integrity="sha512-WzHZOpkAAY/u9nfFXTQq2oKrRlVTKtPKLOp3J0TULh85H3NW1sDTRo0+8c30+l0X3Ry1Z1cJt2yla0aGU7uqqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <Script strategy={'lazyOnload'} src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js" integrity="sha512-1/8Tj23BRrWnKZXeBruk6wTnsMJbi/lJsk9bsRgVwb6j5q39n0A00gFjbCTaDo5l5XrPVv4DZXftrJExhRF/Ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
