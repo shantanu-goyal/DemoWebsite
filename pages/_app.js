@@ -54,16 +54,14 @@ function MyApp({ Component, pageProps }) {
               })();`,
         }}
       />
-      <Script strategy={'lazyOnload'} id="beamer" type='text/javascript' src="https://app.getbeamer.com/js/beamer-embed.js" onLoad={loadHandler2} />
-      {available2 && (
-        <Script strategy={'lazyOnload'} id="beamer-config" dangerouslySetInnerHTML={
-          {
-            __html: `var beamer_config = {
+      <Script strategy={'worker'} id="beamer" type='text/javascript' src="https://cors-anywhere.herokuapp.com/https://app.getbeamer.com/js/beamer-embed.js" />
+      <Script strategy={'worker'} id="beamer-config" dangerouslySetInnerHTML={
+        {
+          __html: `var beamer_config = {
               product_id : 'uJgeHXDh45550'
             };`
-          }
-        } />
-      )}
+        }
+      } />
       <Script id="segment-app" type='text/javascript'
         dangerouslySetInnerHTML={{
           __html: `
