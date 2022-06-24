@@ -88,7 +88,7 @@ function MyApp({ Component, pageProps }) {
             r=o.createElement('script');r.async=1;
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`
+        })(window,document,'https://cors-anywhere.herokuapp.com/https://static.hotjar.com/c/hotjar-','.js?sv=');`
       }}>
       </Script>
       <Script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous" />
