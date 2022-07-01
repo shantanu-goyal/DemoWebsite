@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }) {
       </Script>
       <Script
         id="walkme"
-        strategy={'lazyOnload'}
+        strategy={'worker'}
         type="text/javascript"
         dangerouslySetInnerHTML={{
           __html: `(function() { 
